@@ -1,6 +1,6 @@
 	html {
 		background: #d3d3d3;
-		background: url('/images/clouds-bg2.jpg');
+		background: url('images/clouds-bg2.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
@@ -129,7 +129,7 @@
 	#header {
 		overflow: auto;
 		background: #889aa4;
-		background: url('/images/clouds.jpg') top left;
+		background: url('images/clouds.jpg') top left;
 		padding: 10px 0;
 		margin-bottom: 20px;
 		min-height: 120px;
