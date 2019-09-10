@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="HandheldFriendly" content="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/js/jquery-ga-events.js"></script>
+	<script src="/js/google.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+ 	<link href="/css/jwcrp.css" rel="stylesheet" />
+    <title>Joint Weather and Climate Research Programme (JWCRP)</title>
+</head>
+<body id="short">
+	<header>
+		<div>
+			<a href="#mainContent" class="displayOnFocus" accesskey="s">Skip to content</a>
+		</div>
+		<div id="header">
+			<!-- cloud image credit: Alex Gerst, NASA -->
+				<div class="col-md-3 hidden-print" id="topLogos">
+					<a href="https://www.metoffice.gov.uk/"><img src="/images/met-office-logo-black.png" alt="Met Office logo" title="go to the Met Office website" class="img-responsive" id="met-office" /><img src="/images/met-office-logo-black-small.png" alt="Met Office logo" title="go to the Met Office website" id="met-office-ie" /></a>
+					<a href="https://nerc.ukri.org/"><img src="/images/nerc-logo.png" alt="NERC logo" title="go to the NERC website" class="img-responsive" /></a>
+				</div>
+				<div class="col-md-9">
+					<h1>Joint Weather &amp; Climate Research Programme</h1>
+					<h2>A partnership in weather and climate research</h2>
+				</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="row">
+			<aside class="col-lg-3 col-lg-push-9 col-md-4 col-md-push-8 hidden-print" aria-label="Site navigation">
+				
+			</aside>
+			<main class="col-lg-9 col-lg-pull-3 col-md-8 col-md-pull-4" aria-labelledby="mainContent">
+				<div class="sr-only">
+					<p id="mainContent"><strong>Joint Weather &amp; Climate Research Programme</strong></p>
+					<p><strong>A partnership in weather and climate research</strong></p>
+				</div>
+				<p class="lead">The Joint Weather and Climate Research Programme (JWCRP) facilitates research between the Met Office and NERC. Its overarching goal is to ensure the UK maintains and strengthens its leading international position in weather and climate science.</p>
+				<p>The JWCRP has two major elements. The first is a joint commitment to sustaining and growing the UK's national capability in observing, understanding, modelling and predicting weather and climate, along with the infrastructure required to deliver that national capability. The second is to align major research initiatives and programmes to ensure the most effective impact of the research and pull-through into the delivery of services to government and business.</p>
+				<p style="margin-bottom: 40px;">The JWCRP allows the Met Office and  NERC to speak with one voice on issues around major infrastructure investments, and enables both organisations to demonstrate efficient use of resources.<p>
+			</main>
+		</div>
+		<aside class="visible-sm visible-xs hidden-print" id="bottomPartners" aria-label="JWCRP partners">
+			<hr />
+			<p class="noBottomMargin"><strong>Our partners:</strong></p>
+			<a href="https://www.bas.ac.uk/"><img src="/images/bas-logo.png" alt="British Antarctic Survey" title="go to the BAS website" class="fad img-responsive" /></a>
+			<a href="https://www.ceh.ac.uk/"><img src="/images/ceh-logo.png" alt="Centre for Ecology and Hydrology" title="go to the CEH website" class="fad img-responsive" /></a>	
+			<a href="https://www.ncas.ac.uk/"><img src="/images/ncas-logo.png" alt="National Centre for Atmospheric Science" title="go to the NCAS website" class="fad img-responsive" /></a>
+			<a href="https://www.nceo.ac.uk/"><img src="/images/nceo-logo.png" alt="National Centre for Earth Observation" title="go to the NCEO website" class="fad img-responsive" /></a>
+			<a href="http://noc.ac.uk/"><img src="/images/noc-logo.png" alt="National Oceanography Centre" title="go to the NOC website" class="fad img-responsive" /></a>
+			<a href="http://www.pml.ac.uk/"><img src="/images/pml-logo.png" alt="Plymouth Marine Laboratory" title="go to the PML website" class="fad img-responsive" /></a>					
+		</aside>
+	</div>
+	
+	<footer>
+		<div class="hidden-print container">
+			<div class="row" id="footer">
+				<div class="col-sm-6">
+					<div class="footerCell">
+						<a href="http://www.metoffice.gov.uk/about-us/legal/tandc#Use-of-Crown-Copyright" title="external link">&copy; Crown copyright <%=year(now)%></a> &nbsp;|&nbsp; <a href="/sitemap.asp" accesskey="3">Sitemap</a>
+					</div>
+				</div>
+				
+				<div class="col-sm-6">
+					<div class="text-right footerCell">
+						Last updated: <%= FileLastMod %>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</footer>
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script src="/js/bootstrap.min.js"></script>
+	<script>
+	$('#partners').css('visibility', 'hidden');
+	$('.fad2').hide();
+	$('#partners').css('visibility', 'visible');
+	$('#bottomPartners').css('visibility', 'hidden');
+	$('.fad').hide();
+	$('#bottomPartners').css('visibility', 'visible');
+
+	$(document).ready(function(){
+		var bodyHeight = $("#short").height();
+		var viewPortSize = $(window).height();
+		var triggerAbove = 130;
+		var triggerHeight = (bodyHeight - viewPortSize) - triggerAbove;
+		var fadeDone = 0;
+		if (triggerHeight <= 0) {
+			fadeDone = 1;
+			for (i = 0; i < 6; i++) {
+				if (i == 0) {
+					$('.fad:eq(' + i + ')').fadeIn(1000);
+				} else {
+					$('.fad:eq(' + i + ')').delay(200 * i).fadeIn(1000);
+				}
+			}	
+		}
+		
+		$(window).scroll(function () {
+			console.log($(window).scrollTop());
+			if (fadeDone == 0) {
+				if ($(window).scrollTop() >= triggerHeight) {
+					for (i = 0; i < 6; i++) {
+						if (i == 0) {
+							$('.fad:eq(' + i + ')').fadeIn(1000);
+						} else {
+							$('.fad:eq(' + i + ')').delay(200 * i).fadeIn(1000);
+						}
+					}
+					$(this).off('scroll');
+				}
+			}
+		});
+
+		for (i = 0; i < 6; i++) {
+			if (i == 0) {
+				$('.fad2:eq(' + i + ')').fadeIn(1000);
+			} else {
+				$('.fad2:eq(' + i + ')').delay(200 * i).fadeIn(1000);
+			}
+		}	
+		
+	});
+	</script>
+	<!-- Website design by Sean Terry @ NERC -->
+</body>
+</html>
