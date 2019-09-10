@@ -1,4 +1,4 @@
-<!--#include virtual="/includes/head.asp"-->	
+<!--#include virtual="/includes/head.html"-->	
     <title>Joint Weather and Climate Research Programme (JWCRP)</title>
 </head>
 <body id="short">
@@ -18,4 +18,4 @@
 				<p style="margin-bottom: 40px;">The JWCRP allows the Met Office and  NERC to speak with one voice on issues around major infrastructure investments, and enables both organisations to demonstrate efficient use of resources.<p>
 			</main>
 		</div>
-<!--#include virtual="/includes/footer.asp"-->
+<!--#include virtual="/includes/footer.html"-->
